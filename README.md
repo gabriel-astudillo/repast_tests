@@ -4,11 +4,11 @@ Para ejecutar estos códigos es necesario instalar RepastHPC [repast_hpc-2.2.0.t
 
 # Instalación de RepastHPC
 
-1. Antes de instalar RepastHPC, es necesario verificar que las librerías Boost de C++ estén instalada y que exista alguna implementación de MPI. Los códigos utilizan las librerías ```libboost-all-dev``` y ```libblacs-mpi-dev```.
+1. Antes de instalar RepastHPC, es necesario verificar que las librerías Boost de C++ estén instalada y que exista alguna implementación de MPI. Los códigos utilizan las librerías ```libboost-all-dev``` y ```libblacs-mpi-dev```. Es importante que la librería mpi sean la última.
 
 2. Una vez descomprimido, hay que modificar la línea 4088 que archivo ```configure```: agregar "a mano" la versión de boost instalada en el sistema. Para esto, revisar el archivo ```/usr/include/boost/version.hpp```. Por ejemplo, agregar ```boost_major_version=165``` si la versión es 1_65. **IMPORTANTE**: No instalar la versión que viene con Repast.
 
-3. No se logró que compilara con la version de netcdf de los paquetes de Debian. Se instaló las librerías que vienen con repast (dentro del directorio ```MANUAL_INSTALL```), cuya instalacion se detalla en el apartado "Requirement #5" del  archivo INSTALL.txt
+3. No se logró que compilara con la versión de netcdf de los paquetes de Debian. Se instaló las librerías que vienen con repast (dentro del directorio ```MANUAL_INSTALL```), cuya instalacion se detalla en el apartado "Requirement #5" del  archivo INSTALL.txt
 
 ```
 cd MANUAL_INSTALL
