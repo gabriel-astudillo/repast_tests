@@ -1,4 +1,4 @@
-# Pruebas de código en Repast HPC
+# Pruebas de código con Repast HPC
 
 Para ejecutar estos códigos es necesario instalar RepastHPC [repast_hpc-2.2.0.tgz](https://github.com/Repast/repast.hpc/releases/download/v2.2.0/repast_hpc-2.2.0.tgz).
 
