@@ -1,0 +1,13 @@
+#Properties file
+
+duration=5
+totalGolAgents = 5
+probLiveAgent = 0.6
+
+
+
+#All processes will use this value as the random number seed.
+#AUTO for random seed
+#global.random.seed = AUTO
+
+random.seed=AUTO
