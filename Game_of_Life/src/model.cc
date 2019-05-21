@@ -107,6 +107,14 @@ void GolModel::init(){
 }
 
 void GolModel::synchronizeBorders(){
+	
+	discreteSpace->balance();
+	
+	repast::RepastProcess::instance()->synchronizeAgentStatus<GolAgent, \
+		GolAgentPackage, \
+		GolAgentPackageProvider, \
+		GolAgentPackageReceiver>(context, *provider, *receiver, *receiver);
+	
 	repast::RepastProcess::instance()->synchronizeProjectionInfo<GolAgent, \
 		GolAgentPackage, \
 		GolAgentPackageProvider, \
