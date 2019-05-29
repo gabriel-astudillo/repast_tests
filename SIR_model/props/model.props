@@ -1,0 +1,16 @@
+#Properties file
+
+tiempoSimulacion=5000
+totalIndividuos = 200
+probInfeccion = 0.85
+radioInfeccion = 10
+probInmunidad = 0.10
+tiempoRecuperacion = 200
+
+
+
+#All processes will use this value as the random number seed.
+#AUTO for random seed
+#global.random.seed = AUTO
+
+random.seed=AUTO
