@@ -3,12 +3,7 @@
 #include <model.hh>
 
 // Ejemplo de agentes que se mueven en un espacio continuo.
-// Se crea un sólo agente en el método init() de golModel, el que
-// se mueve un lugar a la derecha por cada tick.
-// Para probar el movimiento y verificar que cambia de proceso, se
-// puede hacer:
-// 	./run.sh duration=30 |grep '^T Rank:0 AgentId(0,'
-//      con T el número de tick que se quiere visualizar.
+// Este programa implementa el modelo de contagio SIR.
 
 namespace Global
 {
