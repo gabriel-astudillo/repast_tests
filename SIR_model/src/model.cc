@@ -128,7 +128,6 @@ void SIRModel::init()
 
 void SIRModel::synchronizeBorders()
 {
-
 	discreteSpace->balance();
 
 	repast::RepastProcess::instance()->synchronizeAgentStatus<SIRAgent, \
@@ -170,9 +169,6 @@ void SIRModel::checkStatus()
 	myRank   = repast::RepastProcess::instance()->rank();
 	currTick = repast::RepastProcess::instance()->getScheduleRunner().currentTick();
 
-	//std::cout << currTick << "\tRank:" << myRank << " is checking status ..." << std::endl;
-
-
 	std::vector<SIRAgent*> agents;
 
 	if(context.size() > 0) {
@@ -206,11 +202,6 @@ void SIRModel::checkStatus()
 		}
 	}
 
-	//std::cout  << currTick << ";myRank:" << myRank << ";" \
-	        << SusceptiblesParcial << ";" \
-	        << InfectadosParcial << ";" \
-	        << RecuperadosParcial << std::endl;
-
 	//Enviar cantidad de S,I,R al proceso 0 para que consolide los datos
 	uint32_t Susceptibles;
 	uint32_t Infectados;
@@ -237,20 +228,11 @@ void SIRModel::checkStatus()
 	}
 
 	boost::mpi::broadcast(_comm, pararSimulacion, 0);
-	//std::cout << currTick << "->" << myRank << " : " << pararSimulacion << '\n';
 	if(pararSimulacion) { //Cada proceso finaliza su correspondiente scheduler
 		repast::RepastProcess::instance()->getScheduleRunner().stop();
 	}
 
-
 	synchronizeBorders();
 
 }
-
-
-
-
-
-
-
 
