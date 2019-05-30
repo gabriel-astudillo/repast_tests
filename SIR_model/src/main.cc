@@ -30,12 +30,7 @@ int main(int argc, char** argv)
 
 
 	boost::mpi::environment env(argc, argv);
-
-	//std::cout << env.processor_name() << std::endl;
-
 	boost::mpi::communicator world;
-
-	//std::cout << "Hello, world! I'm rank " << world.rank()<< " of " << world.size() << std::endl;
 
 	repast::RepastProcess::init(configFile);
 
