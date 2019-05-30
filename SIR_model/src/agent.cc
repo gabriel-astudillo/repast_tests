@@ -7,8 +7,6 @@ SIRAgent::SIRAgent(repast::AgentId id)
 
 	_id = id;
 
-	//double idx = repast::Random::instance()->nextDouble();
-
 	_agentState = (id.id()==0 && myRank==0) ? I : S;
 	_tiempoInfeccion    = 0;
 }
@@ -79,10 +77,6 @@ void SIRAgent::applyRules(repast::SharedContext<SIRAgent>* context, \
 	cSpace->getLocation(_id, agentLoc);
 	repast::Point<double> centerC(agentLoc[0], agentLoc[1]);
 
-	//std::cout << currTick << " Rank:" << myRank << " " << _id << " State->"<< this->getState() <<std::endl;
-	//std::cout << currTick << " Rank:" << myRank << " " << _id << " LocationD:"<< centerD << \
-	//" LocationC: " << centerC <<std::endl;
-
 	for(auto fooAgent : neighbors) {
 		State fooAgentState;
 		std::vector<double> fooAgentLocC;
@@ -95,11 +89,9 @@ void SIRAgent::applyRules(repast::SharedContext<SIRAgent>* context, \
 			if(idx < Global::probInfeccion) {
 				fooAgent->setState(I);
 			}
-		}
-
-		//std::cout << currTick << " Rank:" << myRank << " " << _id << "->"<< fooAgent->getId() << ": " << fooAgentState <<std::endl;
+		}		
 	}
-	//std::cout << currTick << " Rank:" << myRank << " " << _id << " neighborsAlive->"<< neighborsAlive <<std::endl;
+	
 	_tiempoInfeccion++;
 
 	double idx = repast::Random::instance()->nextDouble();
